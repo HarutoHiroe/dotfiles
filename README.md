@@ -34,9 +34,29 @@
 
 ## 新 Mac でのセットアップ
 
+### 🚀 一発インストール（推奨）
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/HarutoHiroe/dotfiles/master/setup.sh | bash
+```
+
+`setup.sh` が以下を順番に実行：
+
+1. Command Line Tools（必要なら）
+2. Determinate Nix
+3. `~/nix-config` clone + `darwin-rebuild switch`
+4. Homebrew
+5. `~/dotfiles` clone
+6. Brewfile 適用（`brew bundle`）
+7. `stow` で全 symlink 作成
+
+**冪等性あり：再実行しても安全。** 既存環境はスキップ or 最新化される。
+
+### 🔧 手動セットアップ（参考）
+
 ```bash
 # 1. Determinate Nix インストール
-curl -fsSL https://install.determinate.systems/nix | sh -s -- install
+curl -fsSL https://install.determinate.systems/nix | sh -s -- install --determinate
 
 # 2. nix-config 適用（stow 含む CLI ツール群が入る）
 git clone https://github.com/HarutoHiroe/nix-config ~/nix-config
@@ -57,6 +77,17 @@ cd ~/dotfiles
 stow zsh tmux nvim wezterm yazi cmus starship fastfetch \
      btop cava fancy-cat mpv aerospace yt-x
 ```
+
+### 🔐 セットアップ後の手動アクション
+
+1. **新シェル起動**：`exec zsh`（direnv hook / PATH 反映）
+2. **gh CLI 認証**：`gh auth login`
+3. **GUI 設定確認**：
+   - System Settings → Apple Account → iCloud → **Keychain** オン
+   - System Settings → Apple Account → iCloud → **Photos** オン
+   - Time Machine 用外付け SSD 接続 & 設定
+4. **機密設定ファイルの復元**（iCloud Drive 経由などで手動コピー）：
+   - `~/.config/gh/`, `~/.config/syrics/`, `~/.config/kadai/`, `~/.config/opencode/`
 
 ---
 

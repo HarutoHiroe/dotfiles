@@ -1,0 +1,31 @@
+# [manager]
+# cwd = { fg = "#e3f2fd", bg = "#0d1b2a" }
+#
+# [status]
+# separator_open = ""
+# separator_close = ""
+#
+# [filetype]
+# rules = [
+#   { mime = "image/*", fg = "#90caf9" },
+#   { mime = "video/*", fg = "#64b5f6" },
+#   { mime = "audio/*", fg = "#42a5f5" },
+#   { mime = "application/zip", fg = "#bbdefb" },
+#   { mime = "application/gzip", fg = "#bbdefb" },
+#   { mime = "application/x-tar", fg = "#bbdefb" },
+#   { mime = "application/x-bzip*", fg = "#bbdefb" },
+#   { mime = "application/x-7z-compressed", fg = "#bbdefb" },
+#   { mime = "application/x-rar", fg = "#bbdefb" },
+#   { name = "*", fg = "#e3f2fd" },
+#   { name = "*/", fg = "#64b5f6" },
+# ]
+#
+# [[status.left]]
+# type = "string"
+# fg = "#e3f2fd"
+# bg = "#0d1b2a"
+#
+# [[status.right]]
+# type = "string"
+# fg = "#90caf9"
+# bg = "#0d1b2a"

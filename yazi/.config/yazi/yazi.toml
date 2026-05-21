@@ -1,0 +1,136 @@
+# ~/.config/yazi/yazi.toml
+
+# テキスト/コード → nvim
+[[opener.edit]]
+run = 'nvim "$@"'
+block = true
+for = "unix"
+
+# テキスト/コード閲覧 → bat
+[[opener.view_text]]
+run = 'bat --paging=always --style=numbers,header "$@"'
+block = true
+desc = "bat"
+for = "unix"
+
+# PDF → fancy-cat
+[[opener.pdf]]
+run = 'fancy-cat "$1"'
+block = true
+desc = "fancy-cat"
+for = "unix"
+[[open.prepend_rules]]
+mime = "application/pdf"
+use = "pdf"
+
+
+# 動画 → mpv
+#[[opener.video]]
+#run = 'mpv --vo=tct "$@"'
+#run = 'mpv --vo=sixel --hwdec=auto "$@"'
+#run = 'mpv --vo=iterm2 --hwdec=auto "$@"'
+#run = 'mpv --vo=kitty --vo-kitty-use-shm=yes
+#run = 'mpv --vo=kitty --vo-kitty-use-shm=yes --hwdec=auto "$@"'
+#run = 'mpv --vo=gpu-next --gpu-context=macvk --hwdec=auto "$@"'
+# 再生が終わったら自動で閉じる、かつ最初から適切なサイズで開く
+#run = 'mpv --hwdec=auto --keep-open=no --autofit=70% "$@"'
+#run = 'mpv --vo=gpu --hwdec=auto --gpu-context=cocoa --force-window=yes "$@"'
+#block = true
+#[[opener.video]]
+#run = 'mpv --vo=kitty --vo-kitty-use-shm=yes --hwdec=auto "$@"'
+#block = true
+#desc = "Terminal Inline Play"
+#for = "unix"
+#orphan = true
+#desc = "mpv (Graphical Overlay)"
+#desc = "mpv (tct)"
+#for = "unix"
+#[[opener.video]]
+#run = 'mpv --vo=kitty --vo-kitty-use-shm=yes --hwdec=auto "$@"'
+#block = true
+#desc = "mpv (Graphical)"
+#for = "unix"
+#[[opener.video]]
+#run = 'chafa --format=kitty "$@"'
+#block = true
+#desc = "Chafa (Terminal Graphics)"
+#for = "unix"
+
+#[[open.prepend_rules]]
+#mime = "video/*"
+#use = "video"
+[[opener.video]]
+run = 'mpv --vo=tct --vo-tct-algo=half-blocks --hwdec=auto "$@"'
+block = true
+desc = "Terminal Graphic (tct)"
+for = "unix"
+
+[[open.prepend_rules]]
+mime = "video/*"
+use = "video"
+
+#[[open.prepend_rules]]
+#mime = "video/*"
+#use = "video"
+#[[open.prepend_rules]]
+#mime = "video/*"
+#use = "video"
+# [[opener.video]]
+# run = 'mpv --vo=sixel"$@"'
+# block = true
+# desc = "mpv (kitty)"
+# for = "unix"
+# [[open.prepend_rules]]
+# mime = "video/*"
+# use = "video"
+
+
+# 音声 → mpv
+[[opener.audio]]
+run = 'mpv --no-video "$@"'
+block = true
+desc = "mpv audio"
+for = "unix"
+[[open.prepend_rules]]
+mime = "audio/*"
+use = "audio"
+
+# [manager]
+# show_hidden = false
+# sort_by = "natural"
+# sort_dir_first = true
+#
+# [preview]
+# tab_size = 2
+# max_width = 1000
+# max_height = 1000
+# image_filter = "lanczos"
+# image_quality = 90
+#
+# [opener]
+# edit     = [{ run = 'nvim "$@"',                                    block = true,  desc = "Edit"               }]
+# play     = [{ run = 'mpv --vo=tct --term-osd-bar "$@"',             block = true,  desc = "Play"               }]
+# pdf_term = [{ run = 'fancy-cat "$1"',                               block = true,  desc = "Open in Terminal"   }]
+# open     = [{ run = 'open "$@"',                                    block = false, desc = "Open with System"   }]
+# docx     = [{ run = 'open -a "Microsoft Word" "$@"',                block = false, desc = "Open in Word"       }]
+# xlsx     = [{ run = 'open -a "Microsoft Excel" "$@"',               block = false, desc = "Open in Excel"      }]
+# pptx     = [{ run = 'open -a "Microsoft PowerPoint" "$@"',          block = false, desc = "Open in PowerPoint" }]
+#
+# [open]
+# rules = [
+#   { mime = "application/pdf", use = "pdf_term" },
+#   { mime = "video/*",         use = "play"     },
+#   { name = "*.docx",          use = "docx"     },
+#   { name = "*.xlsx",          use = "xlsx"     },
+#   { name = "*.pptx",          use = "pptx"     },
+#   { name = "*.c",             use = "edit"     },
+# ]
+#
+# [plugin]
+# prepend_previewers = [
+#   { name = "*.mp4",           run = "video-preview"                                },
+#   { name = "*.docx",          run = 'shell "pandoc --from docx --to plain \"$1\""' },
+#   { name = "*.pptx",          run = 'shell "pandoc --from pptx --to plain \"$1\""' },
+#   { name = "*.xlsx",          run = 'shell "xlsx2csv \"$1\""'                      },
+#   { mime = "application/pdf", run = "pdf"                                          },
+# ]

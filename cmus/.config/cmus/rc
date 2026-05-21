@@ -1,0 +1,53 @@
+# --- 見た目 ---
+colorscheme default
+set show_all_tracks=true
+set color_win_cur_attr=bold
+set tree_width_percent=40
+set progress_bar=line
+
+# --- 操作 ---
+unbind common space
+bind common space player-pause
+
+unbind common enter
+bind common enter win-activate
+
+unbind common right
+bind common right seek +10
+
+unbind common left
+bind common left seek -10
+
+unbind common -
+bind common - vol -10%
+
+unbind common ;
+bind common ; vol +10%
+
+# --- ライブラリ ---
+add -l ~/動画ファイル
+
+# --- 通知 ---
+set status_display_program=/Users/hiroeharuto/.config/cmus/notify.sh
+
+# --- 表示フォーマット ---
+set altformat_playlist=%f%= %d
+set altformat_trackwin=%f%= %d
+set altformat_title=%f
+set format_current='%F %a/%l - %t %= %d'
+set format_playlist=%F\ %f
+
+# --- シャッフル・リピート ---
+set shuffle=false
+unbind common s
+bind common s toggle shuffle
+unbind common r
+bind common r toggle repeat
+unbind common S
+bind common S toggle shuffle
+unbind common R
+bind common R toggle repeat
+unbind common C
+bind common C toggle repeat_current
+unbind common l
+bind common l toggle repeat_current

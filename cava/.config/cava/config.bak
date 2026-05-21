@@ -1,0 +1,13 @@
+[general]
+bars = 20
+
+[input]
+method = portaudio
+source = "0"
+
+[output]
+method = ncurses
+
+[color]
+foreground = cyan
+background = default

@@ -1,0 +1,44 @@
+# OS
+.DS_Store
+*.swp
+*.swo
+*~
+
+# Editors
+.netrwhist
+
+# Generic caches / builds
+**/cache/
+**/Cache/
+**/node_modules/
+**/.git/
+**/package-lock.json
+**/bun.lock
+
+# cmus（再生されると更新される / 個人データ）
+cmus/.config/cmus/socket
+cmus/.config/cmus/cache
+cmus/.config/cmus/cache.fingerprint
+cmus/.config/cmus/lib.pl
+cmus/.config/cmus/pitch_cache
+cmus/.config/cmus/search-history
+cmus/.config/cmus/resume
+cmus/.config/cmus/autosave
+cmus/.config/cmus/command-history
+cmus/.config/cmus/show_lyrics_state
+cmus/.config/cmus/offsets
+
+# nvim（プラグインインストール先・自動生成）
+nvim/.config/nvim/lazy/
+nvim/.config/nvim/mason/
+nvim/.config/nvim/plugin/packer_compiled.lua
+nvim/.config/nvim/.netrwhist
+
+# yazi
+yazi/.config/yazi/cache/
+
+# 念のため：機密情報を含むファイルパターン
+*.token
+*secret*
+*credential*
+.env

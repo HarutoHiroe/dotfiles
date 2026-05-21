@@ -1,0 +1,25 @@
+format = """
+$directory\
+$git_branch\
+$time\
+$character
+"""
+
+add_newline = true
+
+[directory]
+style = "fg:#0d1b2a bg:#64b5f6 bold"
+format = '[ $path ]($style) '
+
+[git_branch]
+symbol = " "
+style = "bold cyan"
+
+[time]
+disabled = false
+time_format = "%R"
+format = '[ $time ](fg:#e3f2fd) '
+
+[character]
+success_symbol = '[❯](bold blue)'
+error_symbol = '[❯](bold red)'

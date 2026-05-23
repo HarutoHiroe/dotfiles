@@ -1,0 +1,5 @@
+# 動画再生専用 Ghostty 設定（ウィンドウ小さめ）
+window-width = 80
+window-height = 24
+window-save-state = never
+confirm-close-surface = false

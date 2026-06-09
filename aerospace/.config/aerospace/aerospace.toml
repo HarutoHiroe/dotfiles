@@ -1,7 +1,11 @@
 after-login-command = []
 
-after-startup-command = []
-# after-startup-command = ['exec-and-forget borders']
+after-startup-command = ['exec-and-forget borders', 'exec-and-forget sketchybar']
+
+# AeroSpace のワークスペース変更時に SketchyBar に通知（連動表示用）
+exec-on-workspace-change = ['/bin/bash', '-c',
+    'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
+]
 start-at-login = true
 
 enable-normalization-flatten-containers = true
@@ -21,12 +25,12 @@ automatically-unhide-macos-hidden-apps = false
 preset = 'qwerty'
 
 [gaps]
-inner.horizontal = 5
-inner.vertical =   5
-outer.left =       5
-outer.bottom =     5
-outer.top =        5
-outer.right =      5
+inner.horizontal = 10
+inner.vertical =   10
+outer.left =       10
+outer.bottom =     10
+outer.top =        40
+outer.right =      10
 
 [mode.main.binding]
 
@@ -76,9 +80,10 @@ alt-shift-9 = 'move-node-to-workspace 9'
 alt-f = 'fullscreen'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
-alt-tab = 'workspace-back-and-forth'
+# alt-tab は AltTab に譲渡。直前ワークスペース戻りは alt-backtick (alt+`) に
+alt-backtick = 'workspace-back-and-forth'
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
-alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
+alt-shift-backtick = 'move-workspace-to-monitor --wrap-around next'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 alt-shift-semicolon = 'mode service'

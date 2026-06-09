@@ -143,7 +143,7 @@ header "8/8: stow で symlink 作成"
 # ======================================================================
 readonly STOW_PACKAGES=(
   zsh tmux nvim wezterm yazi cmus starship fastfetch
-  btop cava fancy-cat mpv aerospace yt-x
+  btop cava fancy-cat mpv aerospace yt-x borders sketchybar
 )
 log "stow パッケージを一括 link: ${STOW_PACKAGES[*]}"
 
